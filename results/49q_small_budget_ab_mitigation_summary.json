@@ -1,0 +1,110 @@
+{
+  "captured_at_utc": "2026-05-01T20:45:36.099207+00:00",
+  "method": {
+    "baseline": "Existing 5271-shot DD+active-twirling global-rescale jobs from the N=8 unbiased uniform run.",
+    "readout_only": "Reused each baseline hardware job and submitted only 2048-shot readout calibration circuits.",
+    "zne": "New 1024-shot local-fold ZNE delta-numerator spotchecks with factors [1,3,5], DD+active Pauli twirling, plus readout calibration."
+  },
+  "purpose": "Small-budget A/B mitigation test for the 49Q Kingston 49x648 uniform-sample hardware result.",
+  "rows": [
+    {
+      "baseline": {
+        "delta0_weighted_term": 0.9324606336558529,
+        "delta_weighted_term": 0.17700626067159936,
+        "global_rescaled_ratio": 0.1898270600203459,
+        "hardware_job_id": "d7plbjhoagoc73fideo0",
+        "shots": 5271
+      },
+      "bitstring": "1101100110100111101101000110010000001001100111101",
+      "readout_only_reusing_baseline_job": {
+        "cal_shots": 2048,
+        "calibration_job_id": "d7qgl0iudops7394hpug",
+        "calibration_quantum_seconds": 23,
+        "full_assignment_ratio": 0.18756703854957804,
+        "full_shift_vs_baseline": -0.00226002147076787,
+        "local_tensor_ratio": 0.18770006299657482,
+        "raw_ratio_recomputed": 0.1898270600203459,
+        "tensor_shift_vs_baseline": -0.002126997023771088
+      },
+      "uniform_index": 0,
+      "zne_delta_spotcheck_1024_shots": {
+        "calibration_job_id": "d7qgv9qudops7394i62g",
+        "calibration_quantum_seconds": 12,
+        "full_readout_zne_delta_weighted_term": 0.18712848385820466,
+        "full_readout_zne_over_existing_delta0_ratio": 0.18970375194026515,
+        "hardware_job_id": "d7qgujsf3ras73b5p58g",
+        "hardware_quantum_seconds": 4,
+        "note": "Hybrid diagnostic: ZNE is applied only to the delta numerator and divided by the matching existing delta0 denominator from the readout/global-rescale artifact.",
+        "raw_shift_vs_baseline_ratio": -0.0002664436037640716,
+        "raw_zne_delta_weighted_term": 0.17675781249999997,
+        "raw_zne_over_existing_delta0_ratio": 0.18956061641658184,
+        "shots": 1024,
+        "tensor_readout_zne_delta_weighted_term": 0.18555138992891218,
+        "tensor_readout_zne_over_existing_delta0_ratio": 0.18778686262533156,
+        "tensor_shift_vs_baseline_ratio": -0.002040197395014348,
+        "zne_factors": [
+          1,
+          3,
+          5
+        ]
+      }
+    },
+    {
+      "baseline": {
+        "delta0_weighted_term": 0.9210775943843673,
+        "delta_weighted_term": 0.21988237526086135,
+        "global_rescaled_ratio": 0.23872296601441817,
+        "hardware_job_id": "d7ple1e7g7gs73cf3ef0",
+        "shots": 5271
+      },
+      "bitstring": "1010100000101101011101101101110010001110100100100",
+      "readout_only_reusing_baseline_job": {
+        "cal_shots": 2048,
+        "calibration_job_id": "d7qgnt2udops7394htfg",
+        "calibration_quantum_seconds": 30,
+        "full_assignment_ratio": 0.23305479192274936,
+        "full_shift_vs_baseline": -0.0056681740916688095,
+        "local_tensor_ratio": 0.23897795847233191,
+        "raw_ratio_recomputed": 0.23872296601441817,
+        "tensor_shift_vs_baseline": 0.00025499245791374414
+      },
+      "uniform_index": 5,
+      "zne_delta_spotcheck_1024_shots": {
+        "calibration_job_id": "d7qgso4f3ras73b5p31g",
+        "calibration_quantum_seconds": 8,
+        "full_readout_zne_delta_weighted_term": 0.3077481492850751,
+        "full_readout_zne_over_existing_delta0_ratio": 0.3174228635320664,
+        "hardware_job_id": "d7qgshaudops7394i310",
+        "hardware_quantum_seconds": 4,
+        "note": "Hybrid diagnostic: ZNE is applied only to the delta numerator and divided by the matching existing delta0 denominator from the readout/global-rescale artifact.",
+        "raw_shift_vs_baseline_ratio": 0.08641703141091639,
+        "raw_zne_delta_weighted_term": 0.2994791666666665,
+        "raw_zne_over_existing_delta0_ratio": 0.32513999742533456,
+        "shots": 1024,
+        "tensor_readout_zne_delta_weighted_term": 0.31458843538990927,
+        "tensor_readout_zne_over_existing_delta0_ratio": 0.3270443413868465,
+        "tensor_shift_vs_baseline_ratio": 0.08832137537242835,
+        "zne_factors": [
+          1,
+          3,
+          5
+        ]
+      }
+    }
+  ],
+  "scope": {
+    "backend": "ibm_kingston",
+    "baseline_aggregate_path": "data/results/hardware/operator_loschmidt_echo_49x648_ibm_kingston_unbiased_uniform8_seed20260430_global_rescale_aggregate_20260430.json",
+    "claim_boundary": "A/B diagnostic on two existing uniform-sample strings, not a replacement for the full N_int=8 aggregate and not a tracker-scale N_int=500 run.",
+    "instance_id": "operator_loschmidt_echo_49x648",
+    "uniform_indices": [
+      0,
+      5
+    ]
+  },
+  "verdict": {
+    "next_step": "If spending more budget, run ZNE on 2 additional existing uniform strings or repeat the index-5 ZNE once to separate mitigation signal from 1024-shot/folding noise.",
+    "readout_only": "No useful uplift in this two-string test: index 0 decreases slightly; index 5 tensor is flat and full assignment decreases.",
+    "zne": "Mixed but promising enough for one more small controlled test: index 5 improves strongly, index 0 stays flat. The effect is not yet reliable enough to update the N=8 estimate."
+  }
+}

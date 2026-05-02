@@ -1,0 +1,48 @@
+{
+  "delta": 0.15,
+  "file_name": "operator_loschmidt_echo_49x648_surrogate_6q.qasm",
+  "generator": "tracker_ole_repro.tracker_io.reduced_instances",
+  "instance_id": "operator_loschmidt_echo_49x648_surrogate_6q",
+  "kept_gate_count": 591,
+  "local_observable_declared_zero_based": [
+    4
+  ],
+  "local_path": "data/raw/tracker_qasm/operator_loschmidt_echo_49x648_surrogate_6q.qasm",
+  "local_surrogate": true,
+  "notes": "Local six-qubit connected surrogate induced from the canonical 49x648 active-register circuit. Keeps three perturbation-support qubits and one surviving observable qubit so the Julia TNQS and IBM hardware flows stay lightweight while remaining OLE-shaped.",
+  "num_qubits": 6,
+  "observable": "Z4",
+  "parent_active_qubit_subset": [
+    19,
+    20,
+    21,
+    25,
+    33,
+    34
+  ],
+  "parent_active_qubit_subset_declared": [
+    32,
+    33,
+    34,
+    39,
+    52,
+    53
+  ],
+  "parent_instance_id": "operator_loschmidt_echo_49x648",
+  "reduced_depth": 149,
+  "reduced_size": 591,
+  "sha256": "029bee65463f10a51db646c110bdbdaf14232263d4bb4a6818eae5fe37c6098a",
+  "source_active_qubits": 49,
+  "source_total_gate_count": 4756,
+  "source_url": "local://operator_loschmidt_echo_49x648",
+  "surviving_parent_observable_active_zero_based": [
+    33
+  ],
+  "surviving_parent_perturbation_active_zero_based": [
+    19,
+    20,
+    21
+  ],
+  "tracker_label": "49x648-surrogate-6q",
+  "trotter_L": 3
+}

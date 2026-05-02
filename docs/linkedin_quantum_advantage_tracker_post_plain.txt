@@ -1,0 +1,62 @@
+LinkedIn post text
+
+Suggested image attachments, in this order:
+1. docs/assets/01_ole_definition.png
+2. docs/assets/02_basis_state_average.png
+3. docs/assets/03_global_rescaling.png
+
+Post body:
+
+I have been digging into the Quantum Advantage Tracker from a hobbyist angle, and I found a useful way to explain one of its harder benchmark families: start with six qubits.
+
+The public tracker includes Operator Loschmidt Echo circuits such as:
+
+- 49x648, measured on ibm_boston, reported value 0.824
+- 49x1296, measured on ibm_pittsburgh, reported value 0.649
+- classical BP-TN and Monte Carlo results on the same circuit family
+
+The theory sounds abstract at first, so I attached the main formulas as images.
+
+The basic idea is approachable: evolve an observable, perturb the system, and measure how much of the original operator signal survives. In physics language, this probes operator spreading and information flow in a quantum circuit.
+
+To make it concrete, I built a six-qubit surrogate of the 49x648 circuit. It keeps the same basic structure: Trotterized dynamics, a perturbation region, and a Pauli-Z observable.
+
+Six-qubit results:
+
+- local BP-TN BD64: 0.9603
+- IBM Kingston raw: 0.8828
+- global rescaling + tensor readout: 0.8389
+- ZNE + readout: 0.9154
+
+That small circuit is a useful teaching example. You can see the ideal signal, the hardware loss, and the partial recovery from mitigation.
+
+Then I tried a small-budget 49-qubit hardware estimate on ibm_kingston. This was not a full tracker reproduction. The public protocol uses many more initializations. My run used N_int=8 predeclared uniform basis states with no postselection.
+
+Result:
+
+49Q Kingston small-budget global-rescaling estimate:
+0.2094 +/- 0.0066 standard error
+
+That is far below the public tracker value, but I still consider it a useful result. It is a real 49-qubit hardware measurement under a limited shot budget, and it shows exactly where the hard part is: the deep perturbed numerator gets strongly attenuated, while the global-rescale denominator stays high.
+
+I also ran a small mitigation A/B test. Readout mitigation alone did not help. ZNE was mixed: one sampled basis state stayed flat, another improved from about 0.239 to 0.327. So there may be room for improvement, but not enough yet to claim a new aggregate.
+
+What I like about the Quantum Advantage Tracker is that it makes this kind of learning honest. It is not just about announcing a number. It is about comparing quantum hardware, classical simulation, mitigation, runtime, and protocol details in public.
+
+My current takeaway:
+
+Six qubits are enough to understand the circuit.
+Forty-nine qubits are enough to learn humility.
+
+Sources:
+
+Quantum Advantage Tracker:
+https://quantum-advantage-tracker.github.io/trackers/observable-estimations
+
+IBM blog:
+https://www.ibm.com/quantum/blog/quantum-advantage-tracker
+
+OLE circuit model:
+https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/observable-estimations/circuit-models/operator_loschmidt_echo
+
+#QuantumComputing #Qiskit #IBMQuantum #QuantumAdvantage #ErrorMitigation #TensorNetworks

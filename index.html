@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QAT: Quantum Advantage Tracker OLE Mini Repro</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #17202a;
+        --muted: #53606f;
+        --line: #d8dee8;
+        --panel: #f7f9fc;
+        --accent: #1f6feb;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.55;
+        color: var(--ink);
+        background: white;
+      }
+      header, main, footer {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 32px 20px;
+      }
+      header {
+        padding-top: 48px;
+      }
+      h1 {
+        font-size: clamp(2rem, 5vw, 4rem);
+        line-height: 1;
+        margin: 0 0 18px;
+        letter-spacing: 0;
+      }
+      h2 {
+        margin-top: 40px;
+        font-size: 1.45rem;
+      }
+      p {
+        max-width: 760px;
+      }
+      a {
+        color: var(--accent);
+      }
+      .lead {
+        font-size: 1.2rem;
+        color: var(--muted);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 16px;
+      }
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 18px;
+        background: var(--panel);
+      }
+      .metric {
+        font-size: 1.7rem;
+        font-weight: 700;
+      }
+      pre {
+        overflow-x: auto;
+        padding: 16px;
+        border-radius: 8px;
+        background: #111827;
+        color: #f9fafb;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 16px 0 24px;
+      }
+      th, td {
+        border-bottom: 1px solid var(--line);
+        padding: 10px 8px;
+        text-align: left;
+      }
+      th {
+        background: var(--panel);
+      }
+      img {
+        max-width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+      footer {
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>QAT OLE Mini Repro</h1>
+      <p class="lead">
+        A small reader-facing repo for understanding the Quantum Advantage Tracker
+        through a six-qubit Operator Loschmidt Echo surrogate.
+      </p>
+      <p>
+        This is not a full tracker reproduction. It is a compact companion to a
+        LinkedIn article: one QASM file, one transparent Qiskit statevector run,
+        formula cards, and reference results.
+      </p>
+    </header>
+
+    <main>
+      <section class="grid">
+        <div class="card">
+          <div class="metric">6 qubits</div>
+          <div>Local OLE surrogate</div>
+        </div>
+        <div class="card">
+          <div class="metric">591 gates</div>
+          <div>Depth 149, 60 CZ gates</div>
+        </div>
+        <div class="card">
+          <div class="metric">0.9154</div>
+          <div>IBM Kingston ZNE + readout tensor result</div>
+        </div>
+      </section>
+
+      <h2>Run It Locally</h2>
+      <pre><code>python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python scripts/run_6q_statevector.py</code></pre>
+
+      <p>Expected local statevector result:</p>
+      <pre><code>global-rescale ratio: 0.969064735901</code></pre>
+
+      <h2>Six-Qubit Reference Results</h2>
+      <table>
+        <tr><th>Method</th><th>Value</th></tr>
+        <tr><td>Local BP-TN BD64</td><td>0.9602546583</td></tr>
+        <tr><td>IBM Kingston raw</td><td>0.8828125</td></tr>
+        <tr><td>IBM Kingston global rescaling + tensor readout</td><td>0.8389109357</td></tr>
+        <tr><td>IBM Kingston ZNE + readout tensor</td><td>0.9154327081</td></tr>
+        <tr><td>Local statevector run in this repo</td><td>about 0.9690647359</td></tr>
+      </table>
+
+      <h2>Formula Cards</h2>
+      <p>These are the LinkedIn-ready formula images included in the repo.</p>
+      <div class="grid">
+        <img src="docs/assets/01_ole_definition.png" alt="Operator Loschmidt Echo formula">
+        <img src="docs/assets/02_basis_state_average.png" alt="Basis-state estimator formula">
+        <img src="docs/assets/03_global_rescaling.png" alt="Global rescaling formula">
+      </div>
+
+      <h2>Full Tracker Context</h2>
+      <p>
+        Public tracker submissions include 49-qubit OLE circuits measured on
+        IBM hardware, for example 49x648 on ibm_boston with value 0.824 and
+        49x1296 on ibm_pittsburgh with value 0.649. This repo focuses on the
+        six-qubit teaching circuit and includes the 49Q small-budget Kingston
+        result only as context.
+      </p>
+
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://quantum-advantage-tracker.github.io/trackers/observable-estimations">Quantum Advantage Tracker</a></li>
+        <li><a href="https://www.ibm.com/quantum/blog/quantum-advantage-tracker">IBM Quantum Advantage Tracker blog</a></li>
+        <li><a href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/observable-estimations/circuit-models/operator_loschmidt_echo">OLE circuit model on GitHub</a></li>
+      </ul>
+    </main>
+
+    <footer>
+      <p>QAT is a small educational companion repo. The public tracker repository is Apache-2.0 licensed.</p>
+    </footer>
+  </body>
+</html>

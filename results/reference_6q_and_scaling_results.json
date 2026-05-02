@@ -1,0 +1,108 @@
+{
+  "bptn_bd192_20q_log_status": {
+    "events": 39,
+    "exists": true,
+    "final_exists": false,
+    "final_path": "data/results/operator_loschmidt_echo_49x648_surrogate_20q_bptn_bd192.json",
+    "first_event": {
+      "active_qubits": 20,
+      "bond_dimension": 192,
+      "bp_maxiter": 50,
+      "created_at_utc": "2026-05-01T11:53:20.114",
+      "cutoff": 0.0,
+      "event": "run_start",
+      "input_json": "/mnt/c/Users/Lenna/SynologyDrive/qlab/OLEt-tracker-circuits/tracker_ole_repro/data/results/operator_loschmidt_echo_49x648_surrogate_20q_bptn_bd192_input.json",
+      "instance_id": "operator_loschmidt_echo_49x648_surrogate_20q",
+      "output_json": "/mnt/c/Users/Lenna/SynologyDrive/qlab/OLEt-tracker-circuits/tracker_ole_repro/data/results/operator_loschmidt_echo_49x648_surrogate_20q_bptn_bd192.json",
+      "total_gates": 2427
+    },
+    "last_event": {
+      "created_at_utc": "2026-05-01T12:29:46.877",
+      "elapsed_seconds": 2179.9977099895477,
+      "event": "cache_update_start",
+      "gate_index": 794,
+      "total_gates": 2427
+    },
+    "path": "data/results/operator_loschmidt_echo_49x648_surrogate_20q_bptn_bd192.jsonl"
+  },
+  "comparison": "surrogate 6q/10q/20q BP-TN BD64 vs IBM Kingston 20260501",
+  "created_at_utc": "2026-05-01T12:55:47.065841+00:00",
+  "python_executable": "/home/bram/.venvs/qiskit/bin/python",
+  "rows": [
+    {
+      "bptn_bd64": 0.9602546583424465,
+      "bptn_runtime_seconds": 91.93123602867126,
+      "bptn_source_gate_count": 591,
+      "bptn_translated_gate_count": 711,
+      "gap_global_tensor_minus_bptn": -0.12134372264635218,
+      "gap_ibm_raw_minus_bptn": -0.0774421583424465,
+      "gap_zne_tensor_minus_bptn": -0.04482195021477353,
+      "global_rescale_raw_ratio": 0.8438735177865613,
+      "global_rescale_readout_full_ratio": 0.8389109356960943,
+      "global_rescale_readout_tensor_ratio": 0.8389109356960943,
+      "ibm_job_id": "d7q89ik3lfgs73fgs5lg",
+      "ibm_raw": 0.8828125,
+      "ibm_status": "DONE",
+      "paths": {
+        "bptn_bd64": "data/results/operator_loschmidt_echo_49x648_surrogate_6q_bptn_bd64.json",
+        "ibm_global_rescale": "data/results/hardware/operator_loschmidt_echo_49x648_surrogate_6q_ibm_kingston_global_rescale_tensor_20260501.json",
+        "ibm_raw": "data/results/hardware/operator_loschmidt_echo_49x648_surrogate_6q_ibm_kingston_result_20260501.json",
+        "ibm_zne_readout_tensor": "data/results/hardware/operator_loschmidt_echo_49x648_surrogate_6q_ibm_kingston_zne_readout_tensor_20260501.json"
+      },
+      "q": 6,
+      "zne_raw": 0.9046223958333328,
+      "zne_readout_full": 0.915432708127673,
+      "zne_readout_tensor": 0.915432708127673
+    },
+    {
+      "bptn_bd64": 0.941517988483383,
+      "bptn_runtime_seconds": 109.31844711303711,
+      "bptn_source_gate_count": 980,
+      "bptn_translated_gate_count": 1196,
+      "gap_global_tensor_minus_bptn": -0.24144328092341172,
+      "gap_ibm_raw_minus_bptn": -0.394642988483383,
+      "gap_zne_tensor_minus_bptn": -0.18958032410292358,
+      "global_rescale_raw_ratio": 0.701195219123506,
+      "global_rescale_readout_full_ratio": 0.7013957988501553,
+      "global_rescale_readout_tensor_ratio": 0.7000747075599713,
+      "ibm_job_id": "d7q89u67g7gs73cfrklg",
+      "ibm_raw": 0.546875,
+      "ibm_status": "DONE",
+      "paths": {
+        "bptn_bd64": "data/results/operator_loschmidt_echo_49x648_surrogate_10q_bptn_bd64.json",
+        "ibm_global_rescale": "data/results/hardware/operator_loschmidt_echo_49x648_surrogate_10q_ibm_kingston_global_rescale_tensor_20260501.json",
+        "ibm_raw": "data/results/hardware/operator_loschmidt_echo_49x648_surrogate_10q_ibm_kingston_result_20260501.json",
+        "ibm_zne_readout_tensor": "data/results/hardware/operator_loschmidt_echo_49x648_surrogate_10q_ibm_kingston_zne_readout_tensor_20260501.json"
+      },
+      "q": 10,
+      "zne_raw": 0.7374674479166663,
+      "zne_readout_full": 0.7493439143150643,
+      "zne_readout_tensor": 0.7519376643804594
+    },
+    {
+      "bptn_bd64": 0.05343493752734603,
+      "bptn_runtime_seconds": 694.6694650650024,
+      "bptn_source_gate_count": 1971,
+      "bptn_translated_gate_count": 2427,
+      "gap_global_tensor_minus_bptn": 0.38905529982495435,
+      "gap_ibm_raw_minus_bptn": 0.339143187472654,
+      "gap_zne_tensor_minus_bptn": 0.45978097129256573,
+      "global_rescale_raw_ratio": 0.4444444444444444,
+      "global_rescale_readout_full_ratio": 0.4475296298941315,
+      "global_rescale_readout_tensor_ratio": 0.44249023735230036,
+      "ibm_job_id": "d7q8a9poagoc73fj5pbg",
+      "ibm_raw": 0.392578125,
+      "ibm_status": "DONE",
+      "paths": {
+        "bptn_bd64": "data/results/operator_loschmidt_echo_49x648_surrogate_20q_bptn_bd64.json",
+        "ibm_global_rescale": "data/results/hardware/operator_loschmidt_echo_49x648_surrogate_20q_ibm_kingston_global_rescale_tensor_20260501.json",
+        "ibm_raw": "data/results/hardware/operator_loschmidt_echo_49x648_surrogate_20q_ibm_kingston_result_20260501.json",
+        "ibm_zne_readout_tensor": "data/results/hardware/operator_loschmidt_echo_49x648_surrogate_20q_ibm_kingston_zne_readout_tensor_20260501.json"
+      },
+      "q": 20,
+      "zne_raw": 0.4736328124999999,
+      "zne_readout_full": 0.5146627373039419,
+      "zne_readout_tensor": 0.5132159088199117
+    }
+  ]
+}
