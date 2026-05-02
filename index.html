@@ -127,10 +127,18 @@
       <pre><code>python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python scripts/run_6q_statevector.py</code></pre>
+python scripts/qiskit_statevector_runner.py
+python scripts/tn_mps_runner.py --shots 20000</code></pre>
 
       <p>Expected local statevector result:</p>
       <pre><code>global-rescale ratio: 0.969064735901</code></pre>
+
+      <p>
+        The first script is an exact Qiskit statevector calculation. The second
+        uses Qiskit Aer with a matrix-product-state simulator and sampled
+        measurement counts, so it should land close to the same value with small
+        shot noise.
+      </p>
 
       <h2>49Q QASM</h2>
       <p>

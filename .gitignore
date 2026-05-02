@@ -3,4 +3,5 @@ __pycache__/
 *.pyc
 .DS_Store
 results/6q_statevector_result.json
+results/6q_mps_simulator_result.json
 *.log

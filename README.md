@@ -22,6 +22,10 @@ six-qubit version.
   - metadata for the public 49Q circuit.
 - `scripts/run_6q_statevector.py`
   - standalone Qiskit script that computes the all-zero six-qubit OLE signal.
+- `scripts/qiskit_statevector_runner.py`
+  - explicit Qiskit statevector runner entrypoint.
+- `scripts/tn_mps_runner.py`
+  - Qiskit Aer matrix-product-state simulator runner with sampled measurements.
 - `results/reference_6q_and_scaling_results.json`
   - compact reference values from the local study.
 - `docs/article.md`
@@ -39,7 +43,8 @@ Use Python 3.10 or newer.
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python scripts/run_6q_statevector.py
+python scripts/qiskit_statevector_runner.py
+python scripts/tn_mps_runner.py --shots 20000
 ```
 
 Expected local output is close to:
@@ -53,6 +58,32 @@ global-rescale ratio: 0.969064735901
 The local statevector result is close to the BP-TN BD64 reference
 `0.9602546583`, but the methods are not identical. The statevector script is
 included because it is transparent and easy to run.
+
+## Simulator Runners
+
+There are two local simulator entrypoints:
+
+```bash
+python scripts/qiskit_statevector_runner.py
+```
+
+This computes the six-qubit all-zero signal exactly with Qiskit's statevector
+tools. It should print:
+
+```text
+global-rescale ratio: 0.969064735901
+```
+
+The second runner uses Qiskit Aer with a matrix-product-state simulator:
+
+```bash
+python scripts/tn_mps_runner.py --shots 20000
+```
+
+This runner samples counts from the delta and delta=0 circuits and estimates the
+same global-rescale ratio from measured Z-observable parity. Because it is a
+shot-based simulator path, its value will fluctuate slightly around the exact
+statevector value.
 
 ## Six-Qubit Reference Results
 
