@@ -16,6 +16,10 @@ six-qubit version.
   - a six-qubit surrogate induced from the public `49x648` OLE circuit.
 - `data/operator_loschmidt_echo_49x648_surrogate_6q.json`
   - metadata for the six-qubit circuit.
+- `data/49Q_OLE_circuit_L_3_b_0.25_delta0.15.qasm`
+  - the public 49Q `operator_loschmidt_echo_49x648` OpenQASM 3.0 circuit.
+- `data/operator_loschmidt_echo_49x648_49q.json`
+  - metadata for the public 49Q circuit.
 - `scripts/run_6q_statevector.py`
   - standalone Qiskit script that computes the all-zero six-qubit OLE signal.
 - `results/reference_6q_and_scaling_results.json`
@@ -67,6 +71,29 @@ The six-qubit circuit has:
 - `591` source gates
 - circuit depth `149`
 - `60` CZ gates
+
+## Optional 49Q QASM
+
+The repo also includes the public tracker `49x648` QASM:
+
+```text
+data/49Q_OLE_circuit_L_3_b_0.25_delta0.15.qasm
+```
+
+Important details:
+
+- OpenQASM version: `3.0`
+- declared qubits in the physical-register file: `156`
+- active non-barrier qubits: `49`
+- circuit depth: `149`
+- CZ gates: `648`
+- observable in the tracker instance: `Z52 Z59 Z72`
+- parameters: `L=3`, `b=0.25`, `delta=0.15`
+
+This file is useful for readers who want to inspect the full tracker circuit or
+try their own transpilation/hardware workflow. It is not used by the quick local
+statevector demo, because simulating the full 49Q circuit exactly is not
+practical on a normal laptop.
 
 ## Full Tracker Context
 

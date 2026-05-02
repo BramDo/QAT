@@ -1,0 +1,17 @@
+{
+  "delta": 0.15,
+  "file_name": "49Q_OLE_circuit_L_3_b_0.25_delta0.15.qasm",
+  "instance_id": "operator_loschmidt_echo_49x648",
+  "local_path": "data/raw/tracker_qasm/49Q_OLE_circuit_L_3_b_0.25_delta0.15.qasm",
+  "notes": "Canonical tracker raw qasm fetched without modification.",
+  "num_qubits": 49,
+  "observable": "Z52 Z59 Z72",
+  "sha256": "4aae5089337253921cd70df470dc52b5243e0c8410b36a6bcbb43497db48db29",
+  "source_readme_snapshot": "data/raw/tracker_metadata/operator_loschmidt_echo_README.md",
+  "source_readme_url": "https://raw.githubusercontent.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/main/data/observable-estimations/circuit-models/operator_loschmidt_echo/README.md",
+  "source_repository_url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io",
+  "source_url": "https://raw.githubusercontent.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/main/data/observable-estimations/circuit-models/operator_loschmidt_echo/49Q_OLE_circuit_L_3_b_0.25_delta0.15.qasm",
+  "tracker_label": "49x648",
+  "tracker_page_url": "https://quantum-advantage-tracker.github.io/trackers/observable-estimations",
+  "trotter_L": 3
+}
