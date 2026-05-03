@@ -134,6 +134,22 @@ I also ran a small A/B mitigation test on two of the existing 49Q uniform sample
 
 Readout mitigation alone did not help. ZNE was mixed: one sample stayed flat, one improved strongly. That is not enough to update the full `N_int=8` estimate, but it is enough to justify a small follow-up test.
 
+I then ran one extra ZNE spotcheck on uniform index `1`, using the same Kingston
+layout. The baseline ratio for that string was `0.228659`. Raw ZNE with folding
+factors `1,3,5` moved it to `0.283453`. Adding a separate 3-bit readout
+calibration moved it slightly further: `0.296978` with full-assignment
+correction and `0.296400` with local-tensor correction. This is encouraging,
+but it is still one string, not a new aggregate result.
+
+Combining the three currently available mitigated strings, indices `0,1,5`,
+gives a diagnostic mean of `0.270410 +/- 0.042248` standard error for
+ZNE + local-tensor readout. The baseline mean on the same three strings is
+`0.219070 +/- 0.014907`. This is a useful subset check, but not an unbiased
+final estimate because the subset was assembled after looking at the mitigation
+diagnostics. A clean small-budget completion would run exactly the same pipeline
+on the remaining original indices `2,3,4,6,7` and average all eight predeclared
+strings.
+
 ## Claim Boundary
 
 The tracker results are serious benchmark submissions with large initialization counts and specific IBM processors. My results are a learning and reproduction effort from a limited-budget environment.

@@ -1,0 +1,96 @@
+{
+  "aggregate": {
+    "baseline_ratio": {
+      "mean": 0.21906972891025742,
+      "n": 3,
+      "normal_95_interval": [
+        0.18985169422710702,
+        0.24828776359340782
+      ],
+      "standard_deviation": 0.025819959473737813,
+      "standard_error": 0.014907160552627755
+    },
+    "full_assignment_readout_zne_ratio": {
+      "mean": 0.26803479944437336,
+      "n": 3,
+      "normal_95_interval": [
+        0.19040366302831993,
+        0.3456659358604268
+      ],
+      "standard_deviation": 0.06860258802138522,
+      "standard_error": 0.03960772266125175
+    },
+    "local_tensor_readout_zne_ratio": {
+      "mean": 0.27041041679366257,
+      "n": 3,
+      "normal_95_interval": [
+        0.18760374552165723,
+        0.3532170880656679
+      ],
+      "standard_deviation": 0.07317620502488131,
+      "standard_error": 0.042248301669390476
+    },
+    "raw_zne_ratio": {
+      "mean": 0.2660511423272099,
+      "n": 3,
+      "normal_95_interval": [
+        0.18746715293734662,
+        0.34463513171707316
+      ],
+      "standard_deviation": 0.06944462361464122,
+      "standard_error": 0.04009387213768535
+    }
+  },
+  "backend": "ibm_kingston",
+  "captured_at_utc": "2026-05-03T16:04:25.190464+00:00",
+  "instance_id": "operator_loschmidt_echo_49x648",
+  "mitigation": {
+    "global_rescaling": "ZNE/readout-corrected delta numerator divided by existing matching delta0 denominator",
+    "readout": "3-bit observable readout calibration, full assignment and local tensor correction",
+    "zne": "local-fold delta numerator, factors 1,3,5, 1024 shots per folded circuit"
+  },
+  "rows": [
+    {
+      "baseline_ratio": 0.1898270600203459,
+      "bitstring": "1101100110100111101101000110010000001001100111101",
+      "full_assignment_readout_zne_ratio": 0.18970375194026515,
+      "local_tensor_readout_zne_ratio": 0.18778686262533156,
+      "raw_zne_ratio": 0.18956061641658184,
+      "readout_calibration_job_id": "d7qgv9qudops7394i62g",
+      "source": "results/49q_small_budget_ab_mitigation_summary.json",
+      "uniform_index": 0,
+      "zne_job_id": "d7qgujsf3ras73b5p58g"
+    },
+    {
+      "baseline_ratio": 0.22865916069600817,
+      "bitstring": "0101101000111000111100100110111011000100101011000",
+      "full_assignment_readout_zne_ratio": 0.2969777828607885,
+      "local_tensor_readout_zne_ratio": 0.29640004636880957,
+      "raw_zne_ratio": 0.2834528131397134,
+      "readout_calibration_job_id": "d7rmsvkf3ras73b743b0",
+      "source": "results/49q_zne_readout_spotcheck_index1_20260503.json",
+      "uniform_index": 1,
+      "zne_job_id": "d7rmj5vljm6s73bah3ig"
+    },
+    {
+      "baseline_ratio": 0.23872296601441817,
+      "bitstring": "1010100000101101011101101101110010001110100100100",
+      "full_assignment_readout_zne_ratio": 0.3174228635320664,
+      "local_tensor_readout_zne_ratio": 0.3270443413868465,
+      "raw_zne_ratio": 0.32513999742533456,
+      "readout_calibration_job_id": "d7qgso4f3ras73b5p31g",
+      "source": "results/49q_small_budget_ab_mitigation_summary.json",
+      "uniform_index": 5,
+      "zne_job_id": "d7qgshaudops7394i310"
+    }
+  ],
+  "scope": {
+    "claim_boundary": "Diagnostic subset over available mitigated strings. It is not a final N_int=8 mitigated aggregate because the subset was assembled after inspecting earlier A/B results.",
+    "completion_path": "For a clean complete small-budget result, run the same ZNE+readout pipeline on the remaining original uniform indices 2,3,4,6,7 and average all eight rows.",
+    "uniform_indices": [
+      0,
+      1,
+      5
+    ]
+  }
+}

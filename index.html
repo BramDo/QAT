@@ -149,6 +149,54 @@ python scripts/tn_mps_runner.py --shots 20000</code></pre>
         qubits, depth 149, and 648 CZ gates.
       </p>
 
+      <h2>49Q Kingston Runner</h2>
+      <p>
+        The optional 49Q runner is configured like the small-budget Kingston
+        experiment that produced the 0.2094 estimate: fixed Kingston layout,
+        21x251 shots, DD XY4, active Pauli twirling, and global rescaling. It
+        does not use readout mitigation, ZNE, or postselection.
+      </p>
+      <p>
+        Note: readout mitigation and ZNE were tested later as a two-string A/B
+        diagnostic, not as the source of the 0.2094 N_int=8 aggregate.
+      </p>
+      <pre><code>python scripts/run_49q_kingston_small_budget.py
+python scripts/run_49q_kingston_small_budget.py --execute --sample-count 1</code></pre>
+      <p>
+        The first command is a dry run. The second submits real IBM Runtime
+        jobs and spends quantum budget.
+      </p>
+
+      <h2>49Q ZNE Spotcheck</h2>
+      <p>
+        Because ZNE was the only mitigation variant that hinted at improvement,
+        one extra uniform string was tested with local folding factors 1, 3, and
+        5. A separate 3-bit readout calibration was then applied to the same
+        folded-count result. This is a diagnostic on one string, not a new full
+        49Q aggregate.
+      </p>
+      <table>
+        <tr><th>Quantity</th><th>Value</th></tr>
+        <tr><td>ZNE job</td><td>d7rmj5vljm6s73bah3ig</td></tr>
+        <tr><td>Readout calibration job</td><td>d7rmsvkf3ras73b743b0</td></tr>
+        <tr><td>Uniform string index</td><td>1</td></tr>
+        <tr><td>Baseline global-rescale ratio</td><td>0.2286591607</td></tr>
+        <tr><td>Raw ZNE ratio</td><td>0.2834528131</td></tr>
+        <tr><td>ZNE + full-assignment readout</td><td>0.2969777829</td></tr>
+        <tr><td>ZNE + local-tensor readout</td><td>0.2964000464</td></tr>
+        <tr><td>Tensor-readout shift vs baseline</td><td>+0.0677408857</td></tr>
+      </table>
+      <pre><code>python scripts/run_49q_zne_spotcheck.py --execute --index 1
+python scripts/run_49q_zne_spotcheck.py --execute --readout --input-json results/49q_zne_spotcheck_index1_20260503.json</code></pre>
+      <p>
+        Combining the three currently available mitigated strings, indices 0,
+        1, and 5, gives a diagnostic subset mean of 0.2704104168 for
+        ZNE + local-tensor readout, compared with 0.2190697289 baseline on the
+        same strings. This subset is not an unbiased final estimate; a clean
+        small-budget completion needs the same pipeline on the remaining
+        original indices 2, 3, 4, 6, and 7.
+      </p>
+
       <h2>Six-Qubit Reference Results</h2>
       <table>
         <tr><th>Method</th><th>Value</th></tr>

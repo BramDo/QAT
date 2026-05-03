@@ -39,7 +39,9 @@ Result:
 
 That is far below the public tracker value, but I still consider it a useful result. It is a real 49-qubit hardware measurement under a limited shot budget, and it shows exactly where the hard part is: the deep perturbed numerator gets strongly attenuated, while the global-rescale denominator stays high.
 
-I also ran a small mitigation A/B test. Readout mitigation alone did not help. ZNE was mixed: one sampled basis state stayed flat, another improved from about 0.239 to 0.327. So there may be room for improvement, but not enough yet to claim a new aggregate.
+I also ran a small mitigation A/B test. Readout mitigation alone did not help. ZNE was mixed: one sampled basis state stayed flat, another improved from about 0.239 to 0.327. A follow-up string improved from about 0.229 baseline to about 0.296 with ZNE plus local-tensor readout correction.
+
+Over the three currently available mitigated strings, the diagnostic mean is about 0.270 for ZNE plus local-tensor readout, versus about 0.219 baseline on the same three strings. That is interesting, but not a new final 49Q estimate yet. For that, I would need to run the same pipeline on all eight predeclared strings, not just the strings explored during mitigation diagnostics.
 
 What I like about the Quantum Advantage Tracker is that it makes this kind of learning honest. It is not just about announcing a number. It is about comparing quantum hardware, classical simulation, mitigation, runtime, and protocol details in public.
 

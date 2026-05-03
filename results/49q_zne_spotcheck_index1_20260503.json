@@ -1,0 +1,188 @@
+{
+  "backend": "ibm_kingston",
+  "baseline": {
+    "delta0_weighted_term": 0.92676911402011,
+    "delta_weighted_term": 0.21191424777082143,
+    "global_rescaled_ratio": 0.22865916069600817,
+    "hardware_job_id": "d7plbvk3lfgs73fg410g"
+  },
+  "bitstring": "0101101000111000111100100110111011000100101011000",
+  "captured_at_utc": "2026-05-03T15:28:52.573873+00:00",
+  "circuit": {
+    "active_physical_qubits": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      19,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      37,
+      38,
+      39,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      57,
+      58,
+      59,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75
+    ],
+    "active_qubits": 49,
+    "declared_qubits": 156,
+    "observable_active": [
+      33,
+      39,
+      45
+    ]
+  },
+  "execute_to_submit_hardware": true,
+  "hardware_job_id": "d7rmj5vljm6s73bah3ig",
+  "instance_id": "operator_loschmidt_echo_49x648",
+  "mitigation": {
+    "dynamical_decoupling": "XY4",
+    "pauli_twirling": "active",
+    "postselection": false,
+    "readout_mitigation": false,
+    "zne": "local-fold factors 1,3,5"
+  },
+  "mode": "hardware-run",
+  "qasm_path": "data/49Q_OLE_circuit_L_3_b_0.25_delta0.15.qasm",
+  "records": [
+    {
+      "counts": {
+        "000": 66,
+        "001": 110,
+        "010": 20,
+        "011": 32,
+        "100": 185,
+        "101": 483,
+        "110": 44,
+        "111": 84
+      },
+      "factor": 1,
+      "weighted_term": 0.220703125
+    },
+    {
+      "counts": {
+        "000": 111,
+        "001": 147,
+        "010": 54,
+        "011": 91,
+        "100": 170,
+        "101": 241,
+        "110": 89,
+        "111": 121
+      },
+      "factor": 3,
+      "weighted_term": 0.0390625
+    },
+    {
+      "counts": {
+        "000": 143,
+        "001": 153,
+        "010": 96,
+        "011": 99,
+        "100": 173,
+        "101": 167,
+        "110": 90,
+        "111": 103
+      },
+      "factor": 5,
+      "weighted_term": -0.025390625
+    }
+  ],
+  "submit_only": false,
+  "transpiled": {
+    "base_depth": 167,
+    "base_size": 3483,
+    "folded": [
+      {
+        "depth": 167,
+        "factor": 1,
+        "size": 3483
+      },
+      {
+        "depth": 231,
+        "factor": 3,
+        "size": 4263
+      },
+      {
+        "depth": 295,
+        "factor": 5,
+        "size": 5043
+      }
+    ]
+  },
+  "uniform_index": 1,
+  "zne": {
+    "factors": [
+      1,
+      3,
+      5
+    ],
+    "note": "Diagnostic spotcheck only; not a replacement for N_int=8 aggregate.",
+    "ratio_formula": "zne_delta_weighted_term / existing_baseline_delta0_weighted_term",
+    "shots": 1024,
+    "target": "delta numerator only"
+  },
+  "zne_result": {
+    "shift_vs_baseline_ratio": 0.05479365244370521,
+    "weighted_term": {
+      "coefficients_high_to_low": [
+        -0.0615234375,
+        0.26269531249999994
+      ],
+      "input_factors": [
+        1.0,
+        3.0,
+        5.0
+      ],
+      "input_values": [
+        0.220703125,
+        0.0390625,
+        -0.025390625
+      ],
+      "residuals": [
+        0.019531250000000056,
+        -0.039062499999999944,
+        0.019531250000000056
+      ],
+      "used_order": 1,
+      "zero_noise_estimate": 0.26269531249999994
+    },
+    "zne_over_existing_delta0_ratio": 0.2834528131397134
+  }
+}

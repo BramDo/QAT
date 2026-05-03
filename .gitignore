@@ -4,4 +4,7 @@ __pycache__/
 .DS_Store
 results/6q_statevector_result.json
 results/6q_mps_simulator_result.json
+results/49q_kingston_small_budget_plan.json
+results/49q_kingston_small_budget_run.json
+results/49q_zne_spotcheck_plan.json
 *.log
